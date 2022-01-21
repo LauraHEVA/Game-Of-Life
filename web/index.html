@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of Life</title>
+    <link href="./style/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./script.js" defer></script>
+  </head>
+  <body>
+    <header><h1>Game of Life</h1></header>
+    <main>
+      <div class="container-game">
+        <div class="board">
+          <div class="board__column">
+            <div id="1001" class="board__column__cell"></div>
+            <div id="1002" class="board__column__cell"></div>
+            <div id="1003" class="board__column__cell"></div>
+            <div id="1004" class="board__column__cell"></div>
+            <div id="1005" class="board__column__cell"></div>
+            <div id="1006" class="board__column__cell"></div>
+            <div id="1007" class="board__column__cell"></div>
+            <div id="1008" class="board__column__cell"></div>
+            <div id="1009" class="board__column__cell"></div>
+            <div id="1010" class="board__column__cell"></div>
+            <div id="1011" class="board__column__cell"></div>
+            <div id="1012" class="board__column__cell"></div>
+            <div id="1013" class="board__column__cell"></div>
+            <div id="1014" class="board__column__cell"></div>
+            <div id="1015" class="board__column__cell"></div>
+            <div id="1016" class="board__column__cell"></div>
+            <div id="1017" class="board__column__cell"></div>
+            <div id="1018" class="board__column__cell"></div>
+            <div id="1019" class="board__column__cell"></div>
+            <div id="1020" class="board__column__cell"></div>
+            <div id="1021" class="board__column__cell"></div>
+            <div id="1022" class="board__column__cell"></div>
+            <div id="1023" class="board__column__cell"></div>
+            <div id="1024" class="board__column__cell"></div>
+            <div id="1025" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1101" class="board__column__cell"></div>
+            <div id="1102" class="board__column__cell"></div>
+            <div id="1103" class="board__column__cell"></div>
+            <div id="1104" class="board__column__cell"></div>
+            <div id="1105" class="board__column__cell"></div>
+            <div id="1106" class="board__column__cell"></div>
+            <div id="1107" class="board__column__cell"></div>
+            <div id="1108" class="board__column__cell"></div>
+            <div id="1109" class="board__column__cell"></div>
+            <div id="1110" class="board__column__cell"></div>
+            <div id="1111" class="board__column__cell"></div>
+            <div id="1112" class="board__column__cell"></div>
+            <div id="1113" class="board__column__cell"></div>
+            <div id="1114" class="board__column__cell"></div>
+            <div id="1115" class="board__column__cell"></div>
+            <div id="1116" class="board__column__cell"></div>
+            <div id="1117" class="board__column__cell"></div>
+            <div id="1118" class="board__column__cell"></div>
+            <div id="1119" class="board__column__cell"></div>
+            <div id="1120" class="board__column__cell"></div>
+            <div id="1121" class="board__column__cell"></div>
+            <div id="1122" class="board__column__cell"></div>
+            <div id="1123" class="board__column__cell"></div>
+            <div id="1124" class="board__column__cell"></div>
+            <div id="1125" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1201" class="board__column__cell"></div>
+            <div id="1202" class="board__column__cell"></div>
+            <div id="1203" class="board__column__cell"></div>
+            <div id="1204" class="board__column__cell"></div>
+            <div id="1205" class="board__column__cell"></div>
+            <div id="1206" class="board__column__cell"></div>
+            <div id="1207" class="board__column__cell"></div>
+            <div id="1208" class="board__column__cell"></div>
+            <div id="1209" class="board__column__cell"></div>
+            <div id="1210" class="board__column__cell"></div>
+            <div id="1211" class="board__column__cell"></div>
+            <div id="1212" class="board__column__cell"></div>
+            <div id="1213" class="board__column__cell"></div>
+            <div id="1214" class="board__column__cell"></div>
+            <div id="1215" class="board__column__cell"></div>
+            <div id="1216" class="board__column__cell"></div>
+            <div id="1217" class="board__column__cell"></div>
+            <div id="1218" class="board__column__cell"></div>
+            <div id="1219" class="board__column__cell"></div>
+            <div id="1220" class="board__column__cell"></div>
+            <div id="1221" class="board__column__cell"></div>
+            <div id="1222" class="board__column__cell"></div>
+            <div id="1223" class="board__column__cell"></div>
+            <div id="1224" class="board__column__cell"></div>
+            <div id="1225" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1301" class="board__column__cell"></div>
+            <div id="1302" class="board__column__cell"></div>
+            <div id="1303" class="board__column__cell"></div>
+            <div id="1304" class="board__column__cell"></div>
+            <div id="1305" class="board__column__cell"></div>
+            <div id="1306" class="board__column__cell"></div>
+            <div id="1307" class="board__column__cell"></div>
+            <div id="1308" class="board__column__cell"></div>
+            <div id="1309" class="board__column__cell"></div>
+            <div id="1310" class="board__column__cell"></div>
+            <div id="1311" class="board__column__cell"></div>
+            <div id="1312" class="board__column__cell"></div>
+            <div id="1313" class="board__column__cell"></div>
+            <div id="1314" class="board__column__cell"></div>
+            <div id="1315" class="board__column__cell"></div>
+            <div id="1316" class="board__column__cell"></div>
+            <div id="1317" class="board__column__cell"></div>
+            <div id="1318" class="board__column__cell"></div>
+            <div id="1319" class="board__column__cell"></div>
+            <div id="1320" class="board__column__cell"></div>
+            <div id="1321" class="board__column__cell"></div>
+            <div id="1322" class="board__column__cell"></div>
+            <div id="1323" class="board__column__cell"></div>
+            <div id="1324" class="board__column__cell"></div>
+            <div id="1325" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1401" class="board__column__cell"></div>
+            <div id="1402" class="board__column__cell"></div>
+            <div id="1403" class="board__column__cell"></div>
+            <div id="1404" class="board__column__cell"></div>
+            <div id="1405" class="board__column__cell"></div>
+            <div id="1406" class="board__column__cell"></div>
+            <div id="1407" class="board__column__cell"></div>
+            <div id="1408" class="board__column__cell"></div>
+            <div id="1409" class="board__column__cell"></div>
+            <div id="1410" class="board__column__cell"></div>
+            <div id="1411" class="board__column__cell"></div>
+            <div id="1412" class="board__column__cell"></div>
+            <div id="1413" class="board__column__cell"></div>
+            <div id="1414" class="board__column__cell"></div>
+            <div id="1415" class="board__column__cell"></div>
+            <div id="1416" class="board__column__cell"></div>
+            <div id="1417" class="board__column__cell"></div>
+            <div id="1418" class="board__column__cell"></div>
+            <div id="1419" class="board__column__cell"></div>
+            <div id="1420" class="board__column__cell"></div>
+            <div id="1421" class="board__column__cell"></div>
+            <div id="1422" class="board__column__cell"></div>
+            <div id="1423" class="board__column__cell"></div>
+            <div id="1424" class="board__column__cell"></div>
+            <div id="1425" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1501" class="board__column__cell"></div>
+            <div id="1502" class="board__column__cell"></div>
+            <div id="1503" class="board__column__cell"></div>
+            <div id="1504" class="board__column__cell"></div>
+            <div id="1505" class="board__column__cell"></div>
+            <div id="1506" class="board__column__cell"></div>
+            <div id="1507" class="board__column__cell"></div>
+            <div id="1508" class="board__column__cell"></div>
+            <div id="1509" class="board__column__cell"></div>
+            <div id="1510" class="board__column__cell"></div>
+            <div id="1511" class="board__column__cell"></div>
+            <div id="1512" class="board__column__cell"></div>
+            <div id="1513" class="board__column__cell"></div>
+            <div id="1514" class="board__column__cell"></div>
+            <div id="1515" class="board__column__cell"></div>
+            <div id="1516" class="board__column__cell"></div>
+            <div id="1517" class="board__column__cell"></div>
+            <div id="1518" class="board__column__cell"></div>
+            <div id="1519" class="board__column__cell"></div>
+            <div id="1520" class="board__column__cell"></div>
+            <div id="1521" class="board__column__cell"></div>
+            <div id="1522" class="board__column__cell"></div>
+            <div id="1523" class="board__column__cell"></div>
+            <div id="1524" class="board__column__cell"></div>
+            <div id="1525" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1601" class="board__column__cell"></div>
+            <div id="1602" class="board__column__cell"></div>
+            <div id="1603" class="board__column__cell"></div>
+            <div id="1604" class="board__column__cell"></div>
+            <div id="1605" class="board__column__cell"></div>
+            <div id="1606" class="board__column__cell"></div>
+            <div id="1607" class="board__column__cell"></div>
+            <div id="1608" class="board__column__cell"></div>
+            <div id="1609" class="board__column__cell"></div>
+            <div id="1610" class="board__column__cell"></div>
+            <div id="1611" class="board__column__cell"></div>
+            <div id="1612" class="board__column__cell"></div>
+            <div id="1613" class="board__column__cell"></div>
+            <div id="1614" class="board__column__cell"></div>
+            <div id="1615" class="board__column__cell"></div>
+            <div id="1616" class="board__column__cell"></div>
+            <div id="1617" class="board__column__cell"></div>
+            <div id="1618" class="board__column__cell"></div>
+            <div id="1619" class="board__column__cell"></div>
+            <div id="1620" class="board__column__cell"></div>
+            <div id="1621" class="board__column__cell"></div>
+            <div id="1622" class="board__column__cell"></div>
+            <div id="1623" class="board__column__cell"></div>
+            <div id="1624" class="board__column__cell"></div>
+            <div id="1625" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1701" class="board__column__cell"></div>
+            <div id="1702" class="board__column__cell"></div>
+            <div id="1703" class="board__column__cell"></div>
+            <div id="1704" class="board__column__cell"></div>
+            <div id="1705" class="board__column__cell"></div>
+            <div id="1706" class="board__column__cell"></div>
+            <div id="1707" class="board__column__cell"></div>
+            <div id="1708" class="board__column__cell"></div>
+            <div id="1709" class="board__column__cell"></div>
+            <div id="1710" class="board__column__cell"></div>
+            <div id="1711" class="board__column__cell"></div>
+            <div id="1712" class="board__column__cell"></div>
+            <div id="1713" class="board__column__cell"></div>
+            <div id="1714" class="board__column__cell"></div>
+            <div id="1715" class="board__column__cell"></div>
+            <div id="1716" class="board__column__cell"></div>
+            <div id="1717" class="board__column__cell"></div>
+            <div id="1718" class="board__column__cell"></div>
+            <div id="1719" class="board__column__cell"></div>
+            <div id="1720" class="board__column__cell"></div>
+            <div id="1721" class="board__column__cell"></div>
+            <div id="1722" class="board__column__cell"></div>
+            <div id="1723" class="board__column__cell"></div>
+            <div id="1724" class="board__column__cell"></div>
+            <div id="1725" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1801" class="board__column__cell"></div>
+            <div id="1802" class="board__column__cell"></div>
+            <div id="1803" class="board__column__cell"></div>
+            <div id="1804" class="board__column__cell"></div>
+            <div id="1805" class="board__column__cell"></div>
+            <div id="1806" class="board__column__cell"></div>
+            <div id="1807" class="board__column__cell"></div>
+            <div id="1808" class="board__column__cell"></div>
+            <div id="1809" class="board__column__cell"></div>
+            <div id="1810" class="board__column__cell"></div>
+            <div id="1811" class="board__column__cell"></div>
+            <div id="1812" class="board__column__cell"></div>
+            <div id="1813" class="board__column__cell"></div>
+            <div id="1814" class="board__column__cell"></div>
+            <div id="1815" class="board__column__cell"></div>
+            <div id="1816" class="board__column__cell"></div>
+            <div id="1817" class="board__column__cell"></div>
+            <div id="1818" class="board__column__cell"></div>
+            <div id="1819" class="board__column__cell"></div>
+            <div id="1820" class="board__column__cell"></div>
+            <div id="1821" class="board__column__cell"></div>
+            <div id="1822" class="board__column__cell"></div>
+            <div id="1823" class="board__column__cell"></div>
+            <div id="1824" class="board__column__cell"></div>
+            <div id="1825" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="1901" class="board__column__cell"></div>
+            <div id="1902" class="board__column__cell"></div>
+            <div id="1903" class="board__column__cell"></div>
+            <div id="1904" class="board__column__cell"></div>
+            <div id="1905" class="board__column__cell"></div>
+            <div id="1906" class="board__column__cell"></div>
+            <div id="1907" class="board__column__cell"></div>
+            <div id="1908" class="board__column__cell"></div>
+            <div id="1909" class="board__column__cell"></div>
+            <div id="1910" class="board__column__cell"></div>
+            <div id="1911" class="board__column__cell"></div>
+            <div id="1912" class="board__column__cell"></div>
+            <div id="1913" class="board__column__cell"></div>
+            <div id="1914" class="board__column__cell"></div>
+            <div id="1915" class="board__column__cell"></div>
+            <div id="1916" class="board__column__cell"></div>
+            <div id="1917" class="board__column__cell"></div>
+            <div id="1918" class="board__column__cell"></div>
+            <div id="1919" class="board__column__cell"></div>
+            <div id="1920" class="board__column__cell"></div>
+            <div id="1921" class="board__column__cell"></div>
+            <div id="1922" class="board__column__cell"></div>
+            <div id="1923" class="board__column__cell"></div>
+            <div id="1924" class="board__column__cell"></div>
+            <div id="1925" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2001" class="board__column__cell"></div>
+            <div id="2002" class="board__column__cell"></div>
+            <div id="2003" class="board__column__cell"></div>
+            <div id="2004" class="board__column__cell"></div>
+            <div id="2005" class="board__column__cell"></div>
+            <div id="2006" class="board__column__cell"></div>
+            <div id="2007" class="board__column__cell"></div>
+            <div id="2008" class="board__column__cell"></div>
+            <div id="2009" class="board__column__cell"></div>
+            <div id="2010" class="board__column__cell"></div>
+            <div id="2011" class="board__column__cell"></div>
+            <div id="2012" class="board__column__cell"></div>
+            <div id="2013" class="board__column__cell"></div>
+            <div id="2014" class="board__column__cell"></div>
+            <div id="2015" class="board__column__cell"></div>
+            <div id="2016" class="board__column__cell"></div>
+            <div id="2017" class="board__column__cell"></div>
+            <div id="2018" class="board__column__cell"></div>
+            <div id="2019" class="board__column__cell"></div>
+            <div id="2020" class="board__column__cell"></div>
+            <div id="2021" class="board__column__cell"></div>
+            <div id="2022" class="board__column__cell"></div>
+            <div id="2023" class="board__column__cell"></div>
+            <div id="2024" class="board__column__cell"></div>
+            <div id="2025" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2101" class="board__column__cell"></div>
+            <div id="2102" class="board__column__cell"></div>
+            <div id="2103" class="board__column__cell"></div>
+            <div id="2104" class="board__column__cell"></div>
+            <div id="2105" class="board__column__cell"></div>
+            <div id="2106" class="board__column__cell"></div>
+            <div id="2107" class="board__column__cell"></div>
+            <div id="2108" class="board__column__cell"></div>
+            <div id="2109" class="board__column__cell"></div>
+            <div id="2110" class="board__column__cell"></div>
+            <div id="2111" class="board__column__cell"></div>
+            <div id="2112" class="board__column__cell"></div>
+            <div id="2113" class="board__column__cell"></div>
+            <div id="2114" class="board__column__cell"></div>
+            <div id="2115" class="board__column__cell"></div>
+            <div id="2116" class="board__column__cell"></div>
+            <div id="2117" class="board__column__cell"></div>
+            <div id="2118" class="board__column__cell"></div>
+            <div id="2119" class="board__column__cell"></div>
+            <div id="2120" class="board__column__cell"></div>
+            <div id="2121" class="board__column__cell"></div>
+            <div id="2122" class="board__column__cell"></div>
+            <div id="2123" class="board__column__cell"></div>
+            <div id="2124" class="board__column__cell"></div>
+            <div id="2125" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2201" class="board__column__cell"></div>
+            <div id="2202" class="board__column__cell"></div>
+            <div id="2203" class="board__column__cell"></div>
+            <div id="2204" class="board__column__cell"></div>
+            <div id="2205" class="board__column__cell"></div>
+            <div id="2206" class="board__column__cell"></div>
+            <div id="2207" class="board__column__cell"></div>
+            <div id="2208" class="board__column__cell"></div>
+            <div id="2209" class="board__column__cell"></div>
+            <div id="2210" class="board__column__cell"></div>
+            <div id="2211" class="board__column__cell"></div>
+            <div id="2212" class="board__column__cell"></div>
+            <div id="2213" class="board__column__cell"></div>
+            <div id="2214" class="board__column__cell"></div>
+            <div id="2215" class="board__column__cell"></div>
+            <div id="2216" class="board__column__cell"></div>
+            <div id="2217" class="board__column__cell"></div>
+            <div id="2218" class="board__column__cell"></div>
+            <div id="2219" class="board__column__cell"></div>
+            <div id="2220" class="board__column__cell"></div>
+            <div id="2221" class="board__column__cell"></div>
+            <div id="2222" class="board__column__cell"></div>
+            <div id="2223" class="board__column__cell"></div>
+            <div id="2224" class="board__column__cell"></div>
+            <div id="2225" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2301" class="board__column__cell"></div>
+            <div id="2302" class="board__column__cell"></div>
+            <div id="2303" class="board__column__cell"></div>
+            <div id="2304" class="board__column__cell"></div>
+            <div id="2305" class="board__column__cell"></div>
+            <div id="2306" class="board__column__cell"></div>
+            <div id="2307" class="board__column__cell"></div>
+            <div id="2308" class="board__column__cell"></div>
+            <div id="2309" class="board__column__cell"></div>
+            <div id="2310" class="board__column__cell"></div>
+            <div id="2311" class="board__column__cell"></div>
+            <div id="2312" class="board__column__cell"></div>
+            <div id="2313" class="board__column__cell"></div>
+            <div id="2314" class="board__column__cell"></div>
+            <div id="2315" class="board__column__cell"></div>
+            <div id="2316" class="board__column__cell"></div>
+            <div id="2317" class="board__column__cell"></div>
+            <div id="2318" class="board__column__cell"></div>
+            <div id="2319" class="board__column__cell"></div>
+            <div id="2320" class="board__column__cell"></div>
+            <div id="2321" class="board__column__cell"></div>
+            <div id="2322" class="board__column__cell"></div>
+            <div id="2323" class="board__column__cell"></div>
+            <div id="2324" class="board__column__cell"></div>
+            <div id="2325" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2401" class="board__column__cell"></div>
+            <div id="2402" class="board__column__cell"></div>
+            <div id="2403" class="board__column__cell"></div>
+            <div id="2404" class="board__column__cell"></div>
+            <div id="2405" class="board__column__cell"></div>
+            <div id="2406" class="board__column__cell"></div>
+            <div id="2407" class="board__column__cell"></div>
+            <div id="2408" class="board__column__cell"></div>
+            <div id="2409" class="board__column__cell"></div>
+            <div id="2410" class="board__column__cell"></div>
+            <div id="2411" class="board__column__cell"></div>
+            <div id="2412" class="board__column__cell"></div>
+            <div id="2413" class="board__column__cell"></div>
+            <div id="2414" class="board__column__cell"></div>
+            <div id="2415" class="board__column__cell"></div>
+            <div id="2416" class="board__column__cell"></div>
+            <div id="2417" class="board__column__cell"></div>
+            <div id="2418" class="board__column__cell"></div>
+            <div id="2419" class="board__column__cell"></div>
+            <div id="2420" class="board__column__cell"></div>
+            <div id="2421" class="board__column__cell"></div>
+            <div id="2422" class="board__column__cell"></div>
+            <div id="2423" class="board__column__cell"></div>
+            <div id="2424" class="board__column__cell"></div>
+            <div id="2425" class="board__column__cell"></div>
+          </div>
+          <div class="board__column">
+            <div id="2601" class="board__column__cell"></div>
+            <div id="2602" class="board__column__cell"></div>
+            <div id="2603" class="board__column__cell"></div>
+            <div id="2604" class="board__column__cell"></div>
+            <div id="2605" class="board__column__cell"></div>
+            <div id="2606" class="board__column__cell"></div>
+            <div id="2607" class="board__column__cell"></div>
+            <div id="2608" class="board__column__cell"></div>
+            <div id="2609" class="board__column__cell"></div>
+            <div id="2610" class="board__column__cell"></div>
+            <div id="2611" class="board__column__cell"></div>
+            <div id="2612" class="board__column__cell"></div>
+            <div id="2613" class="board__column__cell"></div>
+            <div id="2614" class="board__column__cell"></div>
+            <div id="2615" class="board__column__cell"></div>
+            <div id="2616" class="board__column__cell"></div>
+            <div id="2617" class="board__column__cell"></div>
+            <div id="2618" class="board__column__cell"></div>
+            <div id="2619" class="board__column__cell"></div>
+            <div id="2620" class="board__column__cell"></div>
+            <div id="2621" class="board__column__cell"></div>
+            <div id="2622" class="board__column__cell"></div>
+            <div id="2623" class="board__column__cell"></div>
+            <div id="2624" class="board__column__cell"></div>
+            <div id="2625" class="board__column__cell"></div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="start" class="buttons__start">Start</button>
+          <button id="pause" class="buttons__pause">Pause</button>
+          <button id="reset" class="buttons__reset">Reset</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
