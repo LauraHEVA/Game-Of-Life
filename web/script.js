@@ -3,6 +3,7 @@ const arrayCellAlives = [];
 const startButton = document.getElementById("start");
 let isGameRunning = false;
 let numberOfNeighbours = 0;
+const arrayCellsAreGonnaDie = [];
 
 function resetNumberOfNeighbours() {
   numberOfNeighbours = 0;
@@ -30,8 +31,8 @@ function newGeneration() {
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
         // Si esta viva y tiene que morir
         console.log(`${cell.id} esta viva y va a morir`);
-        document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell (probar con $mainColor)
-        arrayCellAlives.splice(arrayCellAlives.findIndex(cell.id), 1); // Quitamos del array la celda viva
+        // document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell (probar con $mainColor)
+        arrayCellsAreGonnaDie.push(parseInt(cell.id, 10));
         numberOfNeighbours = 0;
       } else if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
         // si tiene que seguir viviendo
@@ -46,7 +47,16 @@ function newGeneration() {
       numberOfNeighbours = 0;
     }
   }
+  changesAfterChecks();
   return arrayCellAlives;
+}
+
+function changesAfterChecks() {
+  for (let i = 0; i < arrayCellsAreGonnaDie.length; i++) {
+    document.getElementById(arrayCellsAreGonnaDie[i]).style.background =
+      "#fff0f5"; // FIXME chequear si arrayCelsAreGonnaDie almacena numbers o strings
+    arrayCellAlives.splice(arrayCellAlives.findIndex(arrayCellsAreGonnaDie), 1); // Quitamos del array la celda viva
+  }
 }
 
 startButton.addEventListener("click", () => {
