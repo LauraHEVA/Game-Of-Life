@@ -1,6 +1,9 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
 h1 {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
   border-bottom: #cc06cc 2px solid;
   background-color: #e6e6fa;
 }
@@ -19,6 +22,10 @@ h1 {
 }
 .buttons__start, .buttons__pause, .buttons__reset {
   margin: 15px;
+  padding: 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .board {

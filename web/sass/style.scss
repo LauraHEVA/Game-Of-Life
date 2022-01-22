@@ -1,8 +1,11 @@
 @import "variables";
 
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
 h1 {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
   border-bottom: rgb(204, 6, 204) 2px solid;
   background-color: $background;
 }
@@ -21,6 +24,10 @@ h1 {
   &__pause,
   &__reset {
     margin: 15px;
+    padding: 15px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    font-weight: 900;
   }
 }
 
