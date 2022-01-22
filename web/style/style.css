@@ -2,6 +2,7 @@ h1 {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   border-bottom: #cc06cc 2px solid;
+  background-color: #e6e6fa;
 }
 
 .container-game {

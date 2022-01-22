@@ -4,6 +4,7 @@ h1 {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   border-bottom: rgb(204, 6, 204) 2px solid;
+  background-color: $background;
 }
 .container-game {
   display: flex;
