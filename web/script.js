@@ -18,9 +18,9 @@ startButton.addEventListener("click", () => {
   return isGameRunning;
 });
 
-function newGeneration() {
-  // All functions checkNeighbours
-}
+// function newGeneration() {
+//   // All functions checkNeighbours
+// }
 
 function checkNeighboursA(idCell) {
   if (arrayCellAlives.includes(idCell - 1)) {
@@ -88,3 +88,5 @@ function checkOneCell(idCell) {
   checkNeighboursG(idCell);
   checkNeighboursH(idCell);
 }
+
+console.log(checkOneCell);
