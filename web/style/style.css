@@ -7,6 +7,7 @@ h1 {
 
 .container-game {
   display: flex;
+  justify-content: center;
 }
 
 .buttons {
@@ -14,6 +15,10 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding: 20px;
+}
+.buttons__start, .buttons__pause, .buttons__reset {
+  margin: 15px;
 }
 
 .board {
