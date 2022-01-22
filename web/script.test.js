@@ -88,8 +88,6 @@ describe("Given a checkOneCell function", () => {
   });
 });
 
-const arrayCellsAreGonnaDie = [2210, 2310];
-
 function changesAfterChecks(arrayCellsAreGonnaDie) {
   for (let i = 0; i < arrayCellsAreGonnaDie.length; i++) {
     // document.getElementById(arrayCellsAreGonnaDie[i]).style.background =
