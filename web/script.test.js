@@ -1,5 +1,4 @@
 const arrayCellAlives = [1823, 1824];
-const isGameRunning = false;
 let numberOfNeighbours = 0;
 
 function checkNeighbours(idCell) {
