@@ -15,6 +15,7 @@ for (const cell of arrayAllCells) {
 function newGeneration() {
   for (const cell of arrayAllCells) {
     checkOneCell(cell.id);
+    console.log(`linea 18 ${cell.id}`);
     if (arrayCellAlives.includes(cell.id)) {
       // Si esta viva
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
@@ -27,15 +28,12 @@ function newGeneration() {
         numberOfNeighbours = 0;
         return numberOfNeighbours;
       }
-    } else if (!arrayCellAlives.includes(cell.id)) {
-      // Si esta muerta
-      if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
-        // si esta muerta y tiene que vivir:
-        document.getElementById(cell.id).style.background = "#ff006e"; // Color alive cell
-        arrayCellAlives.push(parseInt(cell.id, 10));
-        numberOfNeighbours = 0;
-        return numberOfNeighbours;
-      }
+    } else if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
+      // si esta muerta y tiene que vivir:
+      document.getElementById(cell.id).style.background = "#ff006e"; // Color alive cell
+      arrayCellAlives.push(parseInt(cell.id, 10));
+      numberOfNeighbours = 0;
+      return numberOfNeighbours;
     }
   }
 }

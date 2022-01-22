@@ -20,3 +20,16 @@ describe("Given a checkNeighbours function", () => {
     });
   });
 });
+
+checkOneCell(cell.id);
+if (arrayCellAlives.includes(cell.id)) {
+  // Si esta viva
+  if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
+    // Si esta viva y tiene que morir
+    document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell probar con $mainColor
+    arrayCellAlives.splice(arrayCellAlives.findIndex(cell.id), 1);
+  }
+}
+if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
+  // si tiene 2 o 3 vecinos....
+}
