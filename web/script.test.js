@@ -3,8 +3,7 @@ const isGameRunning = false;
 let numberOfNeighbours = 0;
 
 function checkNeighbours(idCell) {
-  const numberToCheckVertical = idCell + 1;
-  if (arrayCellAlives.includes(numberToCheckVertical)) {
+  if (arrayCellAlives.includes(idCell + 1)) {
     numberOfNeighbours++;
   }
   return numberOfNeighbours;

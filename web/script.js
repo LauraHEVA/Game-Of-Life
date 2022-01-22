@@ -18,18 +18,73 @@ startButton.addEventListener("click", () => {
   return isGameRunning;
 });
 
+function newGeneration() {
+  // All functions checkNeighbours
+}
+
 function checkNeighboursA(idCell) {
-  const numberToCheckA = idCell + 1;
-  if (arrayCellAlives.includes(numberToCheckA)) {
+  if (arrayCellAlives.includes(idCell - 1)) {
     numberOfNeighbours++;
   }
   return numberOfNeighbours;
 }
 
 function checkNeighboursB(idCell) {
-  const numberToCheckB = idCell + 10;
-  if (arrayCellAlives.includes(numberToCheckB)) {
+  if (arrayCellAlives.includes(idCell + 99)) {
     numberOfNeighbours++;
   }
   return numberOfNeighbours;
+}
+
+function checkNeighboursC(idCell) {
+  if (arrayCellAlives.includes(idCell + 100)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkNeighboursD(idCell) {
+  if (arrayCellAlives.includes(idCell + 101)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkNeighboursE(idCell) {
+  if (arrayCellAlives.includes(idCell + 1)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkNeighboursF(idCell) {
+  if (arrayCellAlives.includes(idCell - 99)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkNeighboursG(idCell) {
+  if (arrayCellAlives.includes(idCell - 100)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkNeighboursH(idCell) {
+  if (arrayCellAlives.includes(idCell - 101)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
+}
+
+function checkOneCell(idCell) {
+  checkNeighboursA(idCell);
+  checkNeighboursB(idCell);
+  checkNeighboursC(idCell);
+  checkNeighboursD(idCell);
+  checkNeighboursE(idCell);
+  checkNeighboursF(idCell);
+  checkNeighboursG(idCell);
+  checkNeighboursH(idCell);
 }
