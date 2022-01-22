@@ -21,15 +21,43 @@ describe("Given a checkNeighbours function", () => {
   });
 });
 
-checkOneCell(cell.id);
-if (arrayCellAlives.includes(cell.id)) {
-  // Si esta viva
-  if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
-    // Si esta viva y tiene que morir
-    document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell probar con $mainColor
-    arrayCellAlives.splice(arrayCellAlives.findIndex(cell.id), 1);
+function checkOneCell(idCell) {
+  if (arrayCellAlives.includes(idCell - 1)) {
+    numberOfNeighbours++;
   }
+  if (arrayCellAlives.includes(idCell + 99)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell + 100)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell + 101)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell + 1)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell - 99)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell - 100)) {
+    numberOfNeighbours++;
+  }
+  if (arrayCellAlives.includes(idCell - 101)) {
+    numberOfNeighbours++;
+  }
+  return numberOfNeighbours;
 }
-if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
-  // si tiene 2 o 3 vecinos....
-}
+
+describe("Given a checkOneCell function", () => {
+  describe("When it receives a 1923", () => {
+    test.only("Then it should return numberOfNeighbours 2", () => {
+      const id = 1923;
+      const expectedNeighbours = 2;
+
+      const howManyNeighbours = checkOneCell(id);
+
+      expect(howManyNeighbours).toBe(expectedNeighbours);
+    });
+  });
+});
