@@ -2,12 +2,12 @@ const arrayAllCells = document.querySelectorAll(".board__column__cell");
 const arrayCellAlives = [];
 const startButton = document.getElementById("start");
 let isGameRunning = false;
-let numberOfNeighbours;
+let numberOfNeighbours = 0;
 
 for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
-    arrayCellAlives.push(cell.id);
+    arrayCellAlives.push(parseInt(cell.id, 10));
     console.log(arrayCellAlives);
   });
 }
@@ -18,9 +18,7 @@ startButton.addEventListener("click", () => {
   return isGameRunning;
 });
 
-// function newGeneration() {
-//   // All functions checkNeighbours
-// }
+// function newGeneration() {?????}
 
 function checkNeighboursA(idCell) {
   if (arrayCellAlives.includes(idCell - 1)) {
@@ -87,6 +85,7 @@ function checkOneCell(idCell) {
   checkNeighboursF(idCell);
   checkNeighboursG(idCell);
   checkNeighboursH(idCell);
+  return numberOfNeighbours;
 }
 
-console.log(checkOneCell);
+checkOneCell(1904);
