@@ -12,13 +12,26 @@ for (const cell of arrayAllCells) {
   });
 }
 
+function newGeneration() {
+  for (const cell of arrayAllCells) {
+    checkOneCell(cell.id);
+    if (arrayCellAlives.includes(cell.id)) {
+      if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
+        document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell probar con $mainColor
+      }
+    }
+    if (numberOfNeighbours === 2 || numberOfNeighbours === 3) {
+      // si tiene 2 o 3 vecinos....
+    }
+  }
+}
+
 startButton.addEventListener("click", () => {
   isGameRunning = true;
+  newGeneration();
   console.log("Game is running");
   return isGameRunning;
 });
-
-// function newGeneration() {?????}
 
 function checkNeighboursA(idCell) {
   if (arrayCellAlives.includes(idCell - 1)) {
