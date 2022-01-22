@@ -8,10 +8,14 @@ h1 {
   text-align: center;
   border-bottom: rgb(204, 6, 204) 2px solid;
   background-color: $background;
+  height: 50px;
+  padding: 10px;
+  margin: 0;
 }
 .container-game {
   display: flex;
   justify-content: center;
+  margin: 20px;
 }
 
 .buttons {

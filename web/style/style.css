@@ -6,11 +6,15 @@ h1 {
   text-align: center;
   border-bottom: #cc06cc 2px solid;
   background-color: #e6e6fa;
+  height: 50px;
+  padding: 10px;
+  margin: 0;
 }
 
 .container-game {
   display: flex;
   justify-content: center;
+  margin: 20px;
 }
 
 .buttons {
