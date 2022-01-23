@@ -88,3 +88,23 @@ describe("Given a cellIdNumber function", () => {
     });
   });
 });
+
+const resetBoard = () => {
+  /* for (const cell of arrayAllCells) {
+    document.getElementById(cell.id).style.background = "#fff0f5";
+  } */
+  arrayCellAlives.length = 0;
+  return arrayCellAlives;
+};
+
+describe("Given a resetBoard function", () => {
+  describe("When it's called", () => {
+    test("Then it should retun the arrayCellAlives empty", () => {
+      const expectedArray = [];
+
+      const emptyArray = resetBoard();
+
+      expect(emptyArray.length).toBe(expectedArray.length);
+    });
+  });
+});

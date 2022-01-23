@@ -2,6 +2,8 @@
 const arrayAllCells = document.querySelectorAll(".board__column__cell");
 const arrayCellAlives = [];
 const startButton = document.getElementById("start");
+const pauseButton = document.getElementById("pause");
+const resetButton = document.getElementById("reset");
 let isGameRunning = false;
 
 for (const cell of arrayAllCells) {
@@ -22,14 +24,12 @@ const newGeneration = () => {
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
         console.log(`${cell.id} esta viva y va a morir`);
         arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
-        console.log(arrayCellsAreGonnaDie);
       } else {
         console.log(`${cell.id} esta viva y seguira viva`);
       }
     } else if (numberOfNeighbours === 3) {
       console.log(`${cell.id} esta muerta y tiene que vivir`);
       arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
-      console.log(arrayCellsAreGonnaLive);
     }
   }
   changesAfterChecks(arrayCellsAreGonnaLive, arrayCellsAreGonnaDie);
@@ -56,7 +56,34 @@ const changesAfterChecks = (toLive, toDie) => {
 
 startButton.addEventListener("click", () => {
   isGameRunning = true;
+  bucle();
+  return isGameRunning;
+});
+
+function bucle() {
   newGeneration();
+  if (isGameRunning) {
+    // eslint-disable-next-line no-implied-eval
+    setTimeout("bucle()", 1000);
+  }
+}
+
+pauseButton.addEventListener("click", () => {
+  isGameRunning = false;
+  return isGameRunning;
+});
+
+const resetBoard = () => {
+  for (const cell of arrayAllCells) {
+    document.getElementById(cell.id).style.background = "#fff0f5";
+  }
+  arrayCellAlives.length = 0;
+  return arrayCellAlives;
+};
+
+resetButton.addEventListener("click", () => {
+  isGameRunning = false;
+  resetBoard();
   return isGameRunning;
 });
 
