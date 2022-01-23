@@ -40,7 +40,7 @@ const cellIdNumber = (cellId) => parseInt(cellId, 10);
 
 const changesAfterChecks = (toLive, toDie) => {
   toLive.forEach((aliveCell) => {
-    document.getElementById(aliveCell).style.background = "#ff006e"; // Color alive cell
+    document.getElementById(aliveCell).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(aliveCell));
   });
   toDie.forEach((deathCell) => {
