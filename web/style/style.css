@@ -54,6 +54,7 @@ h1 {
 @media (max-width: 800px) {
   .patterns {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
