@@ -56,15 +56,15 @@ const changesAfterChecks = (toLive, toDie) => {
 
 startButton.addEventListener("click", () => {
   isGameRunning = true;
-  bucle();
+  loopNextGeneration();
   return isGameRunning;
 });
 
-function bucle() {
+function loopNextGeneration() {
   newGeneration();
   if (isGameRunning) {
     // eslint-disable-next-line no-implied-eval
-    setTimeout("bucle()", 1000);
+    setTimeout("loopNextGeneration()", 500);
   }
 }
 
