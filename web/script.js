@@ -10,7 +10,7 @@ for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(cell.id));
-    console.log(arrayCellAlives); // FIXME
+    console.log(arrayCellAlives);
   });
 }
 
@@ -22,13 +22,9 @@ const newGeneration = () => {
     const numberOfNeighbours = checkOneCell(cellIdNumber(cell.id));
     if (arrayCellAlives.includes(cellIdNumber(cell.id))) {
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
-        console.log(`${cell.id} esta viva y va a morir`);
         arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
-      } else {
-        console.log(`${cell.id} esta viva y seguira viva`);
       }
     } else if (numberOfNeighbours === 3) {
-      console.log(`${cell.id} esta muerta y tiene que vivir`);
       arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
     }
   }
