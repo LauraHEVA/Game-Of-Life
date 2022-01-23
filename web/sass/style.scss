@@ -2,20 +2,32 @@
 
 body {
   font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  background: url("../mosaic.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
   text-align: center;
   border-bottom: rgb(204, 6, 204) 2px solid;
   background-color: $background;
+  color: black;
   height: 50px;
   padding: 10px;
+  padding-top: 20px;
   margin: 0;
+  text-shadow: 0 0 12px #ff006e;
 }
 .container-game {
   display: flex;
   justify-content: center;
   margin: 20px;
+  @media (max-width: $breakpoint) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .buttons {
@@ -32,25 +44,30 @@ h1 {
     font-family: "Courier New", Courier, monospace;
     font-size: 18px;
     font-weight: 900;
+    border: purple 4px double;
+    border-radius: 5px;
+    background-color: $buttonColor;
+  }
+  @media (max-width: $breakpoint) {
+    flex-direction: row;
   }
 }
 
 .board {
-  border: 1px black solid;
+  border: 1px purple solid;
+  box-shadow: 0 0 15px rgb(204, 6, 204);
+  background-color: $background;
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-
   &__column {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     &__cell {
       width: 22px;
       height: 22px;
       margin: 2px;
-      border: purple;
       background-color: $mainColor;
     }
   }

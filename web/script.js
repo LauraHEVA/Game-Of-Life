@@ -10,7 +10,7 @@ for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(cell.id));
-    console.log(arrayCellAlives); // FIXME
+    console.log(arrayCellAlives);
   });
 }
 
@@ -22,13 +22,9 @@ const newGeneration = () => {
     const numberOfNeighbours = checkOneCell(cellIdNumber(cell.id));
     if (arrayCellAlives.includes(cellIdNumber(cell.id))) {
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
-        console.log(`${cell.id} esta viva y va a morir`);
         arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
-      } else {
-        console.log(`${cell.id} esta viva y seguira viva`);
       }
     } else if (numberOfNeighbours === 3) {
-      console.log(`${cell.id} esta muerta y tiene que vivir`);
       arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
     }
   }
@@ -115,9 +111,3 @@ function checkOneCell(idCell) {
   }
   return numberOfNeighbours;
 }
-
-/*
-const cellsPattern1 = [
-  1206, 1305, 1404, 1504, 1605, 1706, 1806, 1905, 2004, 1420, 1519, 1618, 1718,
-  1819, 1920, 2020, 2119,
-]; */

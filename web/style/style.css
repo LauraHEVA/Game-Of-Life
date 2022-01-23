@@ -1,20 +1,34 @@
 body {
   font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  background: url("../mosaic.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
   text-align: center;
   border-bottom: #cc06cc 2px solid;
-  background-color: #e6e6fa;
+  background-color: #d49acb80;
+  color: black;
   height: 50px;
   padding: 10px;
+  padding-top: 20px;
   margin: 0;
+  text-shadow: 0 0 12px #ff006e;
 }
 
 .container-game {
   display: flex;
   justify-content: center;
   margin: 20px;
+}
+@media (max-width: 600px) {
+  .container-game {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .buttons {
@@ -30,10 +44,20 @@ h1 {
   font-family: "Courier New", Courier, monospace;
   font-size: 18px;
   font-weight: 900;
+  border: purple 4px double;
+  border-radius: 5px;
+  background-color: #acf1d7;
+}
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: row;
+  }
 }
 
 .board {
-  border: 1px black solid;
+  border: 1px purple solid;
+  box-shadow: 0 0 15px #cc06cc;
+  background-color: #d49acb80;
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -47,7 +71,6 @@ h1 {
   width: 22px;
   height: 22px;
   margin: 2px;
-  border: purple;
   background-color: #fff0f5;
 }
 
