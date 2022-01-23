@@ -62,14 +62,12 @@ for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(cell.id));
-    console.log(arrayCellAlives);
   });
 }
 
 const newGeneration = () => {
   const arrayCellsAreGonnaDie = [];
   const arrayCellsAreGonnaLive = [];
-  console.log(arrayCellAlives);
   for (const cell of arrayAllCells) {
     const numberOfNeighbours = checkOneCell(cellIdNumber(cell.id));
     if (arrayCellAlives.includes(cellIdNumber(cell.id))) {
