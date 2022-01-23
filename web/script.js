@@ -162,14 +162,15 @@ function checkOneCell(idCell) {
   return numberOfNeighbours;
 }
 
-const getPatternOnBoard = (arrayPaterNum) => {
+const getPatternOnBoard = (arrayPattern) => {
   resetBoard();
-  for (const id of arrayPaterNum) {
+  for (const id of arrayPattern) {
     arrayCellAlives.push(id);
   }
   for (const cell of arrayCellAlives) {
     document.getElementById(cell).style.background = "#ff006e";
   }
+  return arrayCellAlives;
 };
 
 pattern1.addEventListener("click", () => {
