@@ -2,17 +2,19 @@
 const arrayAllCells = document.querySelectorAll(".board__column__cell");
 const arrayCellAlives = [];
 const startButton = document.getElementById("start");
+const pauseButton = document.getElementById("pause");
+const resetButton = document.getElementById("reset");
 let isGameRunning = false;
 
 for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(cell.id));
-    console.log(arrayCellAlives);
+    console.log(arrayCellAlives); // FIXME
   });
 }
 
-function newGeneration() {
+const newGeneration = () => {
   const arrayCellsAreGonnaDie = [];
   const arrayCellsAreGonnaLive = [];
   console.log(arrayCellAlives);
@@ -22,25 +24,21 @@ function newGeneration() {
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
         console.log(`${cell.id} esta viva y va a morir`);
         arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
-        console.log(arrayCellsAreGonnaDie);
       } else {
         console.log(`${cell.id} esta viva y seguira viva`);
       }
     } else if (numberOfNeighbours === 3) {
       console.log(`${cell.id} esta muerta y tiene que vivir`);
       arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
-      console.log(arrayCellsAreGonnaLive);
     }
   }
   changesAfterChecks(arrayCellsAreGonnaLive, arrayCellsAreGonnaDie);
   return arrayCellAlives;
-}
+};
 
-function cellIdNumber(cellId) {
-  return parseInt(cellId, 10);
-}
+const cellIdNumber = (cellId) => parseInt(cellId, 10);
 
-function changesAfterChecks(toLive, toDie) {
+const changesAfterChecks = (toLive, toDie) => {
   toLive.forEach((aliveCell) => {
     document.getElementById(aliveCell).style.background = "#ff006e"; // Color alive cell
     arrayCellAlives.push(cellIdNumber(aliveCell));
@@ -54,11 +52,38 @@ function changesAfterChecks(toLive, toDie) {
       console.log("ERROR! CELL WAS NOT ALIVE");
     }
   });
-}
+};
 
 startButton.addEventListener("click", () => {
   isGameRunning = true;
+  loopNextGeneration();
+  return isGameRunning;
+});
+
+function loopNextGeneration() {
   newGeneration();
+  if (isGameRunning) {
+    // eslint-disable-next-line no-implied-eval
+    setTimeout("loopNextGeneration()", 500);
+  }
+}
+
+pauseButton.addEventListener("click", () => {
+  isGameRunning = false;
+  return isGameRunning;
+});
+
+const resetBoard = () => {
+  for (const cell of arrayAllCells) {
+    document.getElementById(cell.id).style.background = "#fff0f5";
+  }
+  arrayCellAlives.length = 0;
+  return arrayCellAlives;
+};
+
+resetButton.addEventListener("click", () => {
+  isGameRunning = false;
+  resetBoard();
   return isGameRunning;
 });
 
