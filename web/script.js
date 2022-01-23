@@ -8,11 +8,11 @@ for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
     document.getElementById(cell.id).style.background = "#ff006e";
     arrayCellAlives.push(cellIdNumber(cell.id));
-    console.log(arrayCellAlives);
+    console.log(arrayCellAlives); // FIXME
   });
 }
 
-function newGeneration() {
+const newGeneration = () => {
   const arrayCellsAreGonnaDie = [];
   const arrayCellsAreGonnaLive = [];
   console.log(arrayCellAlives);
@@ -34,13 +34,11 @@ function newGeneration() {
   }
   changesAfterChecks(arrayCellsAreGonnaLive, arrayCellsAreGonnaDie);
   return arrayCellAlives;
-}
+};
 
-function cellIdNumber(cellId) {
-  return parseInt(cellId, 10);
-}
+const cellIdNumber = (cellId) => parseInt(cellId, 10);
 
-function changesAfterChecks(toLive, toDie) {
+const changesAfterChecks = (toLive, toDie) => {
   toLive.forEach((aliveCell) => {
     document.getElementById(aliveCell).style.background = "#ff006e"; // Color alive cell
     arrayCellAlives.push(cellIdNumber(aliveCell));
@@ -54,7 +52,7 @@ function changesAfterChecks(toLive, toDie) {
       console.log("ERROR! CELL WAS NOT ALIVE");
     }
   });
-}
+};
 
 startButton.addEventListener("click", () => {
   isGameRunning = true;

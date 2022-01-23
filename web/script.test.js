@@ -1,6 +1,6 @@
 const arrayCellAlives = [1823, 1824, 1825, 2209, 2210, 2310];
 
-function checkOneCell(idCell) {
+const checkOneCell = (idCell) => {
   let numberOfNeighbours = 0;
   if (arrayCellAlives.includes(idCell - 1)) {
     numberOfNeighbours++;
@@ -27,7 +27,7 @@ function checkOneCell(idCell) {
     numberOfNeighbours++;
   }
   return numberOfNeighbours;
-}
+};
 
 describe("Given a checkOneCell function", () => {
   describe("When it receives a 1823", () => {
@@ -74,9 +74,7 @@ describe("Given a checkOneCell function", () => {
   });
 });
 
-function cellIdNumber(cellId) {
-  return parseInt(cellId, 10);
-}
+const cellIdNumber = (cellId) => parseInt(cellId, 10);
 
 describe("Given a cellIdNumber function", () => {
   describe("When it receives the string '6789'", () => {
