@@ -55,6 +55,7 @@ h1 {
   .patterns {
     flex-direction: row;
     flex-wrap: wrap;
+    order: 3;
   }
 }
 
