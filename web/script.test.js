@@ -41,7 +41,7 @@ describe("Given a checkOneCell function", () => {
     });
   });
   describe("When it receives a 1824", () => {
-    test.only("Then it should return numberOfNeighbours 2", () => {
+    test("Then it should return numberOfNeighbours 2", () => {
       const id = 1824;
       const expectedNeighbour = 2;
 
@@ -50,9 +50,7 @@ describe("Given a checkOneCell function", () => {
       expect(isNeighbour).toBe(expectedNeighbour);
     });
   });
-});
 
-describe("Given a checkOneCell function", () => {
   describe("When it receives a 1923", () => {
     test("Then it should return numberOfNeighbours 2", () => {
       const id = 1923;
@@ -72,34 +70,6 @@ describe("Given a checkOneCell function", () => {
       const howManyNeighbours = checkOneCell(id);
 
       expect(howManyNeighbours).toBe(expectedNeighbours);
-    });
-  });
-});
-
-function changesAfterChecks(arrayCellsAreGonnaDie) {
-  for (let i = 0; i < arrayCellsAreGonnaDie.length; i++) {
-    // document.getElementById(arrayCellsAreGonnaDie[i]).style.background =
-    //   "#fff0f5";
-    arrayCellAlives.splice(
-      arrayCellAlives.findIndex(arrayCellsAreGonnaDie[i]),
-      1
-    ); // Quitamos del array la celda viva
-  }
-  return [1823, 1824, 2209];
-}
-
-describe("Given a changesAfterChecks function", () => {
-  describe("When it receives an arrayCellsAreGonnaDie with 2210 y 2310", () => {
-    test("Then it should return arrayCellAlives without these values", () => {
-      // Arrange
-      const arrayCells = [2210, 2310];
-      const expectedArrayAlive = [1823, 1824, 2209];
-
-      // Act
-      const arrayCellAliveTest = changesAfterChecks(arrayCells);
-
-      // Assert
-      expect(arrayCellAliveTest).toBe(expectedArrayAlive);
     });
   });
 });
