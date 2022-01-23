@@ -51,6 +51,7 @@ h1 {
   }
   @media (max-width: $breakpoint) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
