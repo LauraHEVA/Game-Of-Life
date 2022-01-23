@@ -108,3 +108,28 @@ describe("Given a resetBoard function", () => {
     });
   });
 });
+
+const getPatternOnBoard = (arrayPattern) => {
+  // resetBoard();
+  arrayCellAlives.length = 0;
+  for (const id of arrayPattern) {
+    arrayCellAlives.push(id);
+  }
+  // for (const cell of arrayCellAlives) {
+  //   document.getElementById(cell).style.background = "#ff006e";
+  // }
+  return arrayCellAlives;
+};
+
+describe("Given a getPatternOnBoard function", () => {
+  describe("When it receives an array with [3, 4, 5]", () => {
+    test("Then it should retun the arrayCellAlives with [3, 4, 5]", () => {
+      const arrayWithCells = [3, 4, 5];
+      const expectedArray = [3, 4, 5];
+
+      const newArrayCopied = getPatternOnBoard(arrayWithCells);
+
+      expect(newArrayCopied).toEqual(expectedArray);
+    });
+  });
+});
