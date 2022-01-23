@@ -4,6 +4,12 @@ const arrayCellAlives = [];
 const startButton = document.getElementById("start");
 const pauseButton = document.getElementById("pause");
 const resetButton = document.getElementById("reset");
+const pattern1 = document.getElementById("pattern1");
+const pattern2 = document.getElementById("pattern2");
+const pattern3 = document.getElementById("pattern3");
+const pattern4 = document.getElementById("pattern4");
+const pattern5 = document.getElementById("pattern5");
+
 const arrayPattern1 = [
   1603, 1502, 1302, 1402, 1303, 1304, 1305, 1306, 1406, 1506, 1605, 1910, 1911,
   1912, 1913, 1914, 1712, 1812, 2012, 2112, 2319, 2219, 2320, 2321, 2221, 2220,
@@ -150,3 +156,14 @@ function checkOneCell(idCell) {
   }
   return numberOfNeighbours;
 }
+
+pattern1.addEventListener("click", () => {
+  arrayCellAlives.length = 0;
+  for (const id of arrayPattern1) {
+    arrayCellAlives.push(id);
+  }
+  for (const cell of arrayCellAlives) {
+    document.getElementById(cell).style.background = "#ff006e";
+    console.log(arrayCellAlives);
+  }
+});
