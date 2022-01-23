@@ -64,7 +64,7 @@ function loopNextGeneration() {
   newGeneration();
   if (isGameRunning) {
     // eslint-disable-next-line no-implied-eval
-    setTimeout("loopNextGeneration()", 500);
+    setTimeout("loopNextGeneration()", 400);
   }
 }
 
