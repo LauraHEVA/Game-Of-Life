@@ -3,8 +3,6 @@ const arrayAllCells = document.querySelectorAll(".board__column__cell");
 const arrayCellAlives = [];
 const startButton = document.getElementById("start");
 let isGameRunning = false;
-let arrayCellsAreGonnaDie = [];
-let arrayCellsAreGonnaLive = [];
 
 for (const cell of arrayAllCells) {
   cell.addEventListener("click", () => {
@@ -15,34 +13,26 @@ for (const cell of arrayAllCells) {
 }
 
 function newGeneration() {
+  const arrayCellsAreGonnaDie = [];
+  const arrayCellsAreGonnaLive = [];
   console.log(arrayCellAlives);
-  console.log("Function newGeneration");
   for (const cell of arrayAllCells) {
     const numberOfNeighbours = checkOneCell(cellIdNumber(cell.id));
-    console.log(`cell id: ${cell.id}`);
-    // debugger;
     if (arrayCellAlives.includes(cellIdNumber(cell.id))) {
-      // Si esta viva
-      console.log(`${cell.id} esta viva`);
       if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
-        // Si esta viva y tiene que morir
         console.log(`${cell.id} esta viva y va a morir`);
-        // document.getElementById(cell.id).style.background = "#fff0f5"; // Color dead cell (probar con $mainColor)
         arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
         console.log(arrayCellsAreGonnaDie);
       } else {
-        // si tiene que seguir viviendo
         console.log(`${cell.id} esta viva y seguira viva`);
       }
     } else if (numberOfNeighbours === 3) {
       console.log(`${cell.id} esta muerta y tiene que vivir`);
-      // si esta muerta y tiene que vivir:
       arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
       console.log(arrayCellsAreGonnaLive);
     }
   }
-  // eslint-disable-next-line no-use-before-define
-  changesAfterChecks();
+  changesAfterChecks(arrayCellsAreGonnaLive, arrayCellsAreGonnaDie);
   return arrayCellAlives;
 }
 
@@ -50,9 +40,12 @@ function cellIdNumber(cellId) {
   return parseInt(cellId, 10);
 }
 
-function changesAfterChecks() {
-  arrayCellsAreGonnaDie.forEach((deathCell) => {
-    // Quitamos del array la celda que muere
+function changesAfterChecks(toLive, toDie) {
+  toLive.forEach((aliveCell) => {
+    document.getElementById(aliveCell).style.background = "#ff006e"; // Color alive cell
+    arrayCellAlives.push(cellIdNumber(aliveCell));
+  });
+  toDie.forEach((deathCell) => {
     document.getElementById(deathCell).style.background = "#fff0f5";
     const foundIndex = arrayCellAlives.indexOf(deathCell);
     if (foundIndex !== -1) {
@@ -61,18 +54,11 @@ function changesAfterChecks() {
       console.log("ERROR! CELL WAS NOT ALIVE");
     }
   });
-  arrayCellsAreGonnaLive.forEach((aliveCell) => {
-    document.getElementById(aliveCell).style.background = "#ff006e"; // Color alive cell
-    arrayCellAlives.push(cellIdNumber(aliveCell));
-  });
-  arrayCellsAreGonnaLive = [];
-  arrayCellsAreGonnaDie = [];
 }
 
 startButton.addEventListener("click", () => {
   isGameRunning = true;
   newGeneration();
-  console.log("Game is running");
   return isGameRunning;
 });
 
@@ -104,3 +90,9 @@ function checkOneCell(idCell) {
   }
   return numberOfNeighbours;
 }
+
+/*
+const cellsPattern1 = [
+  1206, 1305, 1404, 1504, 1605, 1706, 1806, 1905, 2004, 1420, 1519, 1618, 1718,
+  1819, 1920, 2020, 2119,
+]; */
