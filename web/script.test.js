@@ -73,3 +73,58 @@ describe("Given a checkOneCell function", () => {
     });
   });
 });
+
+/*
+function newGeneration() {
+  const arrayCellsAreGonnaDie = [];
+  const arrayCellsAreGonnaLive = [];
+  console.log(arrayCellAlives);
+  for (const cell of arrayAllCells) {
+    const numberOfNeighbours = checkOneCell(cellIdNumber(cell.id));
+    if (arrayCellAlives.includes(cellIdNumber(cell.id))) {
+      if (numberOfNeighbours < 2 || numberOfNeighbours > 3) {
+        console.log(`${cell.id} esta viva y va a morir`);
+        arrayCellsAreGonnaDie.push(cellIdNumber(cell.id));
+        console.log(arrayCellsAreGonnaDie);
+      } else {
+        console.log(`${cell.id} esta viva y seguira viva`);
+      }
+    } else if (numberOfNeighbours === 3) {
+      console.log(`${cell.id} esta muerta y tiene que vivir`);
+      arrayCellsAreGonnaLive.push(cellIdNumber(cell.id));
+      console.log(arrayCellsAreGonnaLive);
+    }
+  }
+  changesAfterChecks(arrayCellsAreGonnaLive, arrayCellsAreGonnaDie);
+  return arrayCellAlives;
+}
+
+describe("Given a newGeneration function", () => {
+  describe("When it receives a 1823", () => {
+    test("Then it should return numberOfNeighbours 1", () => {
+      const id = 1823;
+      const expectedNeighbour = 1;
+
+      const isNeighbour = checkOneCell(id);
+
+      expect(isNeighbour).toBe(expectedNeighbour);
+    });
+  });
+  */
+
+function cellIdNumber(cellId) {
+  return parseInt(cellId, 10);
+}
+
+describe("Given a cellIdNumber function", () => {
+  describe("When it receives the string '6789'", () => {
+    test("Then it should return the number 6789", () => {
+      const IdString = "6789";
+      const expectedNumber = 6789;
+
+      const idNum = cellIdNumber(IdString);
+
+      expect(idNum).toBe(expectedNumber);
+    });
+  });
+});
