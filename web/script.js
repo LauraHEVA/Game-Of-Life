@@ -115,9 +115,3 @@ function checkOneCell(idCell) {
   }
   return numberOfNeighbours;
 }
-
-/*
-const cellsPattern1 = [
-  1206, 1305, 1404, 1504, 1605, 1706, 1806, 1905, 2004, 1420, 1519, 1618, 1718,
-  1819, 1920, 2020, 2119,
-]; */
